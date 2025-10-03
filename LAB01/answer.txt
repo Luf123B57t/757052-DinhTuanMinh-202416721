@@ -1,0 +1,2 @@
+Question 1: If the user chooses “Cancel”, the screen will still display “You have chosen No”
+Question 2: If you want to customize the buttons, for example, to have only Yes and No, or change them to “I do” and “I don’t”, you need to use the JOptionPane.showOptionDialog method. In this method, you pass an Object[] options array containing the buttons you want to display.
