@@ -1,6 +1,6 @@
-package lesson1;
+package LAB01;
 import javax.swing.JOptionPane;
-public class ChoosingOption {
+public class Ex6_1 {
 
 	public static void main(String[] args) {
 		int option = JOptionPane.showConfirmDialog(null, 

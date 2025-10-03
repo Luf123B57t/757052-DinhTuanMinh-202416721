@@ -1,7 +1,7 @@
-package lesson1;
+package LAB01;
 import java.util.Scanner;
 
-public class Calculate {
+public class Ex2_2_5 {
 	private double sum(double num1, double num2) {
 		return num1 + num2;
 	}
@@ -23,7 +23,7 @@ public class Calculate {
 		Scanner sc = new Scanner(System.in);
 		double num1 = sc.nextDouble();
 		double num2 = sc.nextDouble();
-		Calculate calc = new Calculate();
+		Ex2_2_5 calc = new Ex2_2_5();
 		System.out.println("Sum of two number: " + calc.sum(num1,num2));
 		System.out.println("Difference of two number: "+  calc.diff(num1,num2));
 		System.out.println("Product of two number : "+ calc.product(num1, num2));

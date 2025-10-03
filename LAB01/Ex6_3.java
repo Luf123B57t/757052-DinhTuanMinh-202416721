@@ -1,6 +1,6 @@
-package lesson1;
+package LAB01;
 import java.util.Scanner;
-public class StarDisplay {
+public class Ex6_3 {
 
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);

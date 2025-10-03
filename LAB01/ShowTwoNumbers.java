@@ -1,4 +1,4 @@
-package lesson1;
+package LAB01;
 
 import javax.swing.JOptionPane;
 public class ShowTwoNumbers {
