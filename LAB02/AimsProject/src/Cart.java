@@ -41,4 +41,38 @@ public class Cart {
         }
         return total;
     }
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        if(dvdList == null) return;
+        int remaining = MAX_NUMBERED_ORDERS - qtyOrdered;
+        if (remaining < dvdList.length) {
+            System.out.println("Cannot add");
+        } else {
+            for(int i = 0; i < dvdList.length; i++){
+                addDigitalVideoDisc(dvdList[i]);
+            }
+        }
+    }
+    /*
+    public void addDigitalVideoDisc(DigitalVideoDisc... dvdList) {
+        if(dvdList == null) return;
+        int remaining = MAX_NUMBERED_ORDERS - qtyOrdered;
+        if (remaining < dvdList.length) {
+            System.out.println("Cannot add");
+        } else {
+            for(int i = 0; i < dvdList.length; i++){
+                addDigitalVideoDisc(dvdList[i]);
+            }
+        }
+    }
+    */
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){
+        int remaining = MAX_NUMBERED_ORDERS - qtyOrdered;
+        if(remaining <2){
+            System.out.println("Not enough place to add 2 dvds");
+        }
+        else{
+            addDigitalVideoDisc(dvd1);
+            addDigitalVideoDisc(dvd2);
+        }
+    }
 }
