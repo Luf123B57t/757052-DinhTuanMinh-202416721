@@ -75,4 +75,14 @@ public class Cart {
             addDigitalVideoDisc(dvd2);
         }
     }
+    public void printcart(){
+        System.out.println("***********************CART*********************** ");
+        System.out.println("Ordered items");
+        for(int i = 0; i<qtyOrdered; i++){
+            System.out.println((i+1) + "." + itemsordered[i].toString());
+        }
+        System.out.println("Total cost: " + totalCost());
+        System.out.println("*************************************************** ");
+    }
+
 }
