@@ -1,7 +1,8 @@
-Question: Java doesn’t allow you to create a constructor method to build a DVD
-by title then create a constructor method to build a DVD by category, since this
-action can create two constructors with the same signature (the same name, the
-same parameter’s type: String), and this is not permitted in Java. Constructor
-overloading is only valid when constructors have different signatures, meaning
-they differ in at least one of the following: the number of parameters, data types
-of parameters, the order of parameter types.
+Question 1: Is JAVA a Pass by Value or a Pass by Reference programming language? 
+==> JAVA is a Pass by Value programming language
+Question 2: After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain? 
+==> Since Java uses pass-by-value for all arguments, when you call this function, Java copies the values of the references jungleDVD and cinderellaDVD into the parameters o1 and o2. It only swaps the local copies of the references. The original variables in main remain unchanged, so both still point to their original discs. No change happens to the actual objects' titles.
+Question 3: After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed? 
+==> When you call this function, Java again passes the reference by value - the variable dvd inside the method receives a copy of the reference that points to the same object as jungleDVD. Both dvd and jungleDVD point to the same object, so calling setTitle() modifies that shared object. That's why jungleDVD's title changes. Finally, dvd = new DigitalVideoDisc(oldTitle) creates a new object and reassigns the local variable dvd to it; the original jungleDVD in main still points to the modified object.
+Question 4: Write a toString() method for the DigitalVideoDisc class. What should be the return type of this method?
+==> Its return type should be String.
