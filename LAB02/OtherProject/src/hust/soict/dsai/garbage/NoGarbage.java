@@ -1,4 +1,4 @@
-package hust.soict.dsai.lab01;
+package hust.soict.dsai.garbage;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 public class NoGarbage {
