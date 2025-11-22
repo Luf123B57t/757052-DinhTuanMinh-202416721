@@ -1,0 +1,24 @@
+Question:
+- What class should implement the Comparable interface ?
+-> The Media class should implement Comparable interface
+- In those classes, how should you implement the compareTo()method be to reflect the ordering that we want?
+public int compareTo(Media other) {
+        int titleComparison = this.getTitle().compareTo(other.getTitle());
+        if (titleComparison != 0) {
+            return titleComparison;
+        } else {
+            return Double.compare(this.getCost(), other.getCost());
+        }
+    }
+- Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+-> No we can't do that. Since Comparable is an interface with a single compareTo method. Implementing it defines a single natural order for the class. Each class can have only one compareTo, representing its default sorting. If you need multiple ordering rules, you must use Comparator instead.
+- Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+public int compare(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        int titleCompare = dvd1.getTitle().compareTo(dvd2.getTitle());
+        if (titleCompare != 0) return titleCompare;
+
+        int lengthCompare = Integer.compare(dvd2.getLength(), dvd1.getLength()); // decreasing
+        if (lengthCompare != 0) return lengthCompare;
+
+        return Float.compare(dvd1.getCost(), dvd2.getCost());
+    }
