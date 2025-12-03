@@ -8,12 +8,12 @@
 
 ## Mô tả dự án / Project Description
 
-Dự án AIMS cung cấp một giao diện dòng lệnh (CLI) để:
+Dự án AIMS cung cấp một ứng dụng console tương tác với menu để:
 - Quản lý kho hàng (Store) với các sản phẩm media
 - Quản lý giỏ hàng (Cart) của khách hàng
 - Thực hiện các thao tác như thêm/xóa sản phẩm, tìm kiếm, sắp xếp, và phát media
 
-The AIMS project provides a command-line interface (CLI) to:
+The AIMS project provides a console-based interactive menu application to:
 - Manage the store inventory with media products
 - Manage customer shopping cart
 - Perform operations such as add/remove products, search, sort, and play media
@@ -116,7 +116,7 @@ java -cp out hust.soict.dsai.aims.Aims
 
 ## Tài liệu tham khảo / Reference Documents
 
-- **answer.txt**: Chứa các câu hỏi và câu trả lời về việc implement Comparable interface
+- **answer.txt**: Chứa các câu hỏi và câu trả lời về việc triển khai Comparable interface cho các lớp Media
 - **Design/**: Thư mục chứa các tài liệu thiết kế hệ thống
 - **Requirement/**: Thư mục chứa các tài liệu yêu cầu
 
