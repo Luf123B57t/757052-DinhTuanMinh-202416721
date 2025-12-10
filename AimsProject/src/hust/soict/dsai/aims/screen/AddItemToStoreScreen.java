@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 public abstract class AddItemToStoreScreen extends JFrame {
     protected Store store;
     protected Cart cart;
-    protected StoreScreen storeScreen; // Để tham chiếu quay lại
+    protected StoreScreen storeScreen;
 
     public AddItemToStoreScreen(Store store, Cart cart, StoreScreen storeScreen) {
         this.store = store;
@@ -22,10 +22,10 @@ public abstract class AddItemToStoreScreen extends JFrame {
         Container cp = getContentPane();
         cp.setLayout(new BorderLayout());
 
-        // NORTH: Menu Bar
+
         cp.add(createNorth(), BorderLayout.NORTH);
 
-        // CENTER: Form cụ thể (được triển khai bởi lớp con)
+
         cp.add(createCenter(), BorderLayout.CENTER);
 
         setTitle("Add Item to Store");
@@ -34,10 +34,10 @@ public abstract class AddItemToStoreScreen extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
-    // Phương thức trừu tượng để lớp con triển khai form nhập liệu
+
     protected abstract JPanel createCenter();
 
-    // Tạo Menu Bar (Giống như StoreScreen, nhưng View Store sẽ quay lại màn hình cha)
+
     protected JPanel createNorth() {
         JPanel north = new JPanel();
         north.setLayout(new BoxLayout(north, BoxLayout.Y_AXIS));
@@ -58,7 +58,7 @@ public abstract class AddItemToStoreScreen extends JFrame {
         return north;
     }
 
-    // Phương thức chung để xử lý khi nút "Save" được nhấn
+
     protected void showSuccessDialog(String itemName) {
         JOptionPane.showMessageDialog(this,
                 itemName + " đã được thêm vào kho hàng.",

@@ -11,7 +11,6 @@ import javax.swing.SwingUtilities;
 public class Aims {
     public static void main(String[] args) {
 
-        // 1. CHUẨN BỊ DỮ LIỆU CỐ ĐỊNH (SETUP INITIAL DATA)
 
         Store store = new Store();
         Cart cart = new Cart();
@@ -27,7 +26,7 @@ public class Aims {
         Book book2 = new Book("Design Patterns", "Programming", 65.00f);
         Book book3 = new Book("Clean Code", "Programming", 50.00f);
 
-        // CDs (Giả sử constructor của bạn có thêm Artist)
+        // CDs
         CompactDisc cd1 = new CompactDisc("Divide", "Pop", 10.00f, "Ed Sheeran");
         CompactDisc cd2 = new CompactDisc("Thriller", "Pop", 15.00f, "Michael Jackson");
         CompactDisc cd3 = new CompactDisc("Dark Side", "Rock", 30.00f, "Pink Floyd");
@@ -42,10 +41,8 @@ public class Aims {
         store.addMedia(book3);
         store.addMedia(cd3);
 
-        // 2. CHẠY GIAO DIỆN GUI (LAUNCH APPLICATION)
 
         SwingUtilities.invokeLater(() -> {
-            // Mở màn hình StoreScreen, truyền Store và Cart
             new StoreScreen(store, cart);
         });
     }

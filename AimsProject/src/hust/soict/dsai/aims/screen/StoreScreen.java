@@ -36,25 +36,24 @@ public class StoreScreen extends JFrame {
         JMenu menu = new JMenu("Options");
         JMenu smUpdateStore = new JMenu("Update Store");
 
-        // Create and add items with listeners so clicking will open the proper add screens
         JMenuItem addBookItem = new JMenuItem("Add Book");
         addBookItem.addActionListener(e -> {
             new AddBookToStoreScreen(store, cart, this);
-            // keep this StoreScreen visible so Add screen can call storeScreen.refresh()
+
         });
         smUpdateStore.add(addBookItem);
 
         JMenuItem addCDItem = new JMenuItem("Add CD");
         addCDItem.addActionListener(e -> {
             new AddCompactDiscToStoreScreen(store, cart, this);
-            // keep this StoreScreen visible so Add screen can call storeScreen.refresh()
+
         });
         smUpdateStore.add(addCDItem);
 
         JMenuItem addDVDItem = new JMenuItem("Add DVD");
         addDVDItem.addActionListener(e -> {
             new AddDigitalVideoDiscToStoreScreen(store, cart, this);
-            // keep this StoreScreen visible so Add screen can call storeScreen.refresh()
+
         });
         smUpdateStore.add(addDVDItem);
 
@@ -62,7 +61,7 @@ public class StoreScreen extends JFrame {
 
         JMenuItem viewStoreItem = new JMenuItem("View Store");
         viewStoreItem.addActionListener(e -> {
-            // reopen store screen (no-op or refresh). We'll just create a new one
+
             new StoreScreen(this.store, this.cart);
             this.dispose();
         });
@@ -97,7 +96,7 @@ public class StoreScreen extends JFrame {
         cart.setMaximumSize(new Dimension(100, 50));
         cart.addActionListener(e -> {
             new CartScreen(this.cart, this.store);
-            this.dispose(); // Tùy chọn: Đóng màn hình StoreScreen hiện tại
+            this.dispose();
         });
         header.add(Box.createRigidArea(new Dimension(10, 10)));
         header.add(title);
@@ -107,24 +106,24 @@ public class StoreScreen extends JFrame {
         return header;
     }
 
-    // Trong StoreScreen.java
+
     JPanel createCenter() {
         JPanel center = new JPanel();
 
-        // Show all items in a grid with 3 columns; compute rows dynamically so newly-added items appear
+
         ArrayList<Media> mediaInStore = this.store.getItemsInStore();
         int n = mediaInStore.size();
         int cols = 3;
         int rows = (n == 0) ? 1 : ((n + cols - 1) / cols);
         center.setLayout(new GridLayout(rows, cols, 8, 8));
 
-        // Add a MediaStore cell for each media in store
+
         for (int i = 0; i < n; i++) {
             MediaStore cell = new MediaStore(mediaInStore.get(i), this.cart, this);
             center.add(cell);
         }
 
-        // If there are fewer cells than the grid capacity, add empty panels to keep layout
+
         int capacity = rows * cols;
         for (int i = n; i < capacity; i++) {
             center.add(new JPanel());
@@ -133,7 +132,7 @@ public class StoreScreen extends JFrame {
         return center;
     }
 
-    // Public method to refresh the StoreScreen content (rebuilds north and center)
+
     public void refresh() {
         Container cp = getContentPane();
 

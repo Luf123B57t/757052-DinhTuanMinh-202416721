@@ -19,41 +19,37 @@ public class CartScreen extends JFrame {
     public CartScreen(Cart cart, Store store) {
         super();
         this.cart = cart;
-        this.store = store; // ⭐️ SỬA 1: Lưu trữ đối tượng Store
+        this.store = store;
 
-        // Thiết lập kích thước và đóng cửa sổ
+
         this.setSize(1024, 768);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         Container cp = getContentPane();
         cp.setLayout(new BorderLayout());
 
-        // ⭐️ SỬA 2: Lấy Menu Bar và đặt nó trước khi thêm các component khác
+
         JMenuBar menuBar = createCartMenuBar();
         setJMenuBar(menuBar);
 
         JFXPanel fxPanel = new JFXPanel();
-        cp.add(fxPanel, BorderLayout.CENTER); // Đặt JFXPanel vào trung tâm
-
+        cp.add(fxPanel, BorderLayout.CENTER);
         this.setTitle("Cart");
-        this.setVisible(true); // Hiển thị cửa sổ
+        this.setVisible(true);
 
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
                 FXMLLoader loader = null;
                 try {
-                    // ⭐️ SỬA 3: Thêm dấu '/' vào đầu đường dẫn FXML
                     loader = new FXMLLoader(getClass().getResource("/hust/soict/dsai/aims/screen/cart.fxml"));
 
                     Parent root = loader.load();
 
-                    // Lấy Controller tự động tạo
                     CartScreenController controller = loader.getController();
 
-                    // Truyền dữ liệu bằng Setter (BẮT BUỘC: Controller phải có các setters này)
                     controller.setCart(cart);
-                    controller.setStore(store); // Controller cần có setStore()
+                    controller.setStore(store);
 
                     fxPanel.setScene(new Scene(root));
                 }
@@ -69,18 +65,14 @@ public class CartScreen extends JFrame {
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("Options");
 
-        // View Store Action
         JMenuItem viewStoreItem = new JMenuItem("View Store");
         viewStoreItem.addActionListener(e -> {
-            // Mở lại StoreScreen, truyền Store và Cart đã lưu
             new StoreScreen(this.store, this.cart);
             this.dispose();
         });
         menu.add(viewStoreItem);
 
         JMenuItem viewCartItem = new JMenuItem("View Cart");
-        // View Cart (Không làm gì, vì đã ở CartScreen)
-        // viewCartItem.addActionListener(e -> { });
         menu.add(viewCartItem);
 
         menuBar.add(menu);

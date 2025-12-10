@@ -57,7 +57,6 @@ public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
             String category = tfCategory.getText();
             String director = tfDirector.getText();
 
-            // Chuyển đổi và xử lý lỗi (Không cần validate theo yêu cầu bài lab)
             float cost = 0.0f;
             int length = 0;
             try {
@@ -69,13 +68,10 @@ public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
                 return;
             }
 
-            // Tạo và thêm DVD
             DigitalVideoDisc dvd = new DigitalVideoDisc(title, category, director, length, cost);
             store.addMedia(dvd);
 
-            // Hiển thị thông báo, mở lại StoreScreen và đóng cửa sổ hiện tại
             showSuccessDialog(dvd.getTitle());
-            // Refresh the existing StoreScreen instead of creating a new one
             if (storeScreen != null) {
                 storeScreen.refresh();
             }

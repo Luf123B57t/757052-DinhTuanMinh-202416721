@@ -62,14 +62,10 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
                 return;
             }
 
-            // Tạo và thêm CompactDisc (Giả sử constructor CompactDisc có dạng: title, category, cost, artist)
-            // Lưu ý: Bạn cần điều chỉnh constructor này cho phù hợp với cấu trúc CompactDisc của bạn (tracks)
             CompactDisc cd = new CompactDisc(title, category, cost, artist);
             store.addMedia(cd);
 
-            // Hiển thị thông báo, mở lại StoreScreen và đóng cửa sổ hiện tại
             showSuccessDialog(cd.getTitle());
-            // Refresh the existing StoreScreen instead of creating a new one
             if (storeScreen != null) {
                 storeScreen.refresh();
             }
