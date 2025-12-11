@@ -1,0 +1,2 @@
+Question:
+- If we don't update to catch those exceptions, the play() methods will be red-underlined, and an error will be reported as "Unhandled exception type PlayerException".
